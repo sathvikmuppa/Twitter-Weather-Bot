@@ -40,7 +40,9 @@ Humidity: {current_humidity}%
     else:
         print('City not found')
 
-schedule.every().day.at('7:00').do(getWeather) #calls the function at 7:00 am every day
+
+# calls the function at 7:00 am every day
+schedule.every().day.at('07:00').do(getWeather)
 
 while 1:
     schedule.run_pending()
