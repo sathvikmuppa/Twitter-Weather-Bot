@@ -5,12 +5,13 @@ import tweepy
 from keys import keys
 from bs4 import BeautifulSoup
 
-
+#reads twitter tokens from a separate file
 access_token = keys["access_token"]
 access_token_secret = keys["access_token_secret"]
 consumer_key = keys["consumer_key"]
 consumer_key_secret = keys["consumer_key_secret"]
 
+#autorizes tweepy
 auth = tweepy.OAuthHandler(consumer_key, consumer_key_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)  # initializes the tweepy api
