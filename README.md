@@ -1,7 +1,7 @@
 # Twitter-Weather-Bot
-A bot that tweets the temperature, humidity, and weather. Runs at 9:30 everyday using windows task scheduler.
+A bot that tweets the temperature, humidity, and weather. Runs at 7:00AM CST.
 
-This bot uses tweepy as well as openweathermap.org in order to tweet the weather of my city whenever run, currently I am running it everyday using windows task scheduler though i plan to add a timer and run it at all times on a raspberry pi.
+This bot uses tweepy as well as openweathermap.org in order to tweet the weather of my city everyday. I plan to add weekly forecasts as well as weather updates soon.
 
 The access tokens and consumer keys were generated at developer.twitter.com and are in a dictionary in a seperate file.
 
