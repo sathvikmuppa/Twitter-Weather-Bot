@@ -3,9 +3,7 @@ import json
 import math
 import tweepy
 from keys import keys
-import schedule
-import time
-from datetime import datetime
+from bs4 import BeautifulSoup
 
 
 access_token = keys["access_token"]
@@ -39,11 +37,3 @@ Humidity: {current_humidity}%
 {weather_description}''')
     else:
         print('City not found')
-
-
-# calls the function at 7:00 am every day
-schedule.every().day.at('07:00').do(getWeather)
-
-while 1:
-    schedule.run_pending()
-    time.sleep(1)
