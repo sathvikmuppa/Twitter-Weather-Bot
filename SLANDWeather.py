@@ -1,14 +1,23 @@
-from getWeather import getWeather
-from getForecast import getForecast
+from Weather import Weather
+from Forecast import Forecast
 import schedule
 import time
-from datetime import datetime
 
-# tweets the daily forecast at 7am cst as well as the weather every 4 hours throughout the day
-schedule.every().day.at('07:00').do(
-    getForecast, schedule.every(4).hours.do(getWeather))
+try:
+    print('PROGRAM STARTED')
+    f = Forecast()
+    w = Weather()
 
-while 1:
-    schedule.run_pending()
-    time.sleep(1)
+    # tweets the daily forecast at 7am cst as well as the weather every 4 hours throughout the day
+    schedule.every().day.at('05:00').do(f.get)
+    schedule.every().day.at('07:00').do(f.tweet)
+    schedule.every().day.at('08:00').do(w.tweet)
+    schedule.every().day.at('14:00').do(w.tweet)
+    schedule.every().day.at('18:00').do(w.tweet)
+    schedule.every().day.at('22:00').do(w.tweet)
 
+    while 1:
+        schedule.run_pending()
+        time.sleep(1)
+except:
+    print('PROGRAM STOPPED')
